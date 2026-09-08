@@ -50,7 +50,7 @@ export function MobileMenu() {
             ))}
           </nav>
           <Link
-            href="/contact"
+            href={siteConfig.booking.href}
             onClick={() => setOpen(false)}
             className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-teal px-6 py-3 text-sm font-medium text-white"
           >

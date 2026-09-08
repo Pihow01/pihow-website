@@ -24,7 +24,7 @@ export function Header() {
                 {item.children ? <ChevronDown size={14} className="opacity-60" /> : null}
               </Link>
               {item.children ? (
-                <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-xl border border-hairline bg-surface p-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full w-72 translate-y-1 rounded-xl border border-hairline bg-surface p-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {item.children.map((child) => (
                     <Link
                       key={child.href}
@@ -46,7 +46,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <Link
-            href="/contact"
+            href={siteConfig.booking.href}
             className="hidden rounded-full bg-teal px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-dark sm:inline-flex"
           >
             {siteConfig.booking.label}

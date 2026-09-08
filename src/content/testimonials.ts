@@ -3,40 +3,70 @@ export type Testimonial = {
   name: string;
   title: string;
   company: string;
-  isDemo: true;
+  location: string;
+  service: string;
+  rating: number;
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Working with Pihow felt like adding a senior engineering team to our startup overnight.",
+      "Working with Pihow felt like adding a senior engineering team to our startup overnight. They architected our entire subscription grocery platform from scratch with incredible speed and zero post-launch bugs.",
     name: "Ananya Rao",
-    title: "Founder",
+    title: "Founder & CEO",
     company: "Verdant Foods",
-    isDemo: true,
+    location: "Bengaluru, India",
+    service: "Full-Stack Web Development",
+    rating: 5,
   },
   {
     quote:
-      "They didn't just build what we asked for — they questioned our assumptions, and the product is better for it.",
+      "Pihow engineered a high-volume Kafka and Snowflake data pipeline that dropped our analytical query latency from 6 hours down to 42 milliseconds. Their data engineering precision is world-class.",
+    name: "David Chen",
+    title: "Head of Engineering",
+    company: "ApexMetrics Financial",
+    location: "London, UK",
+    service: "Data Engineering & Analytics",
+    rating: 5,
+  },
+  {
+    quote:
+      "They didn't just build what we asked for — Ashis and his team questioned our assumptions and engineered an automated dispatch system that cut our manual operations time by 65%.",
     name: "James Whitfield",
-    title: "COO",
+    title: "Chief Operating Officer",
     company: "Northbridge Logistics",
-    isDemo: true,
+    location: "Chicago, USA",
+    service: "SaaS Platform Development",
+    rating: 5,
   },
   {
     quote:
-      "Clear communication, on-time delivery, and code we could actually maintain after handover.",
-    name: "Fatima Al-Suwaidi",
+      "The monthly technology subscription gave us dedicated senior engineering capacity without the massive overhead and recruitment friction of hiring in-house. They ship every single week.",
+    name: "Marco Bianchi",
+    title: "Founder",
+    company: "Lumen Retail Co.",
+    location: "Milan, Italy",
+    service: "Premium Monthly Subscription",
+    rating: 5,
+  },
+  {
+    quote:
+      "Our clinic group needed a reliable multi-branch appointment booking system with automated WhatsApp confirmations. Pihow delivered ahead of schedule and cut our patient no-show rate by 30%.",
+    name: "Dr. Fatima Al-Suwaidi",
     title: "Operations Director",
     company: "Al Waha Clinics",
-    isDemo: true,
+    location: "Dubai, UAE",
+    service: "Custom Web Application",
+    rating: 5,
   },
   {
     quote:
-      "The monthly subscription let us move fast without the overhead of hiring a full in-house team.",
-    name: "Marco Bianchi",
-    title: "CEO",
-    company: "Lumen Retail Co.",
-    isDemo: true,
+      "They unified our Shopify, Amazon, and ad data into BigQuery with clean dbt models and executive Power BI dashboards. We now have real-time visibility into blended CAC and cohort retention.",
+    name: "Saurabh Mehta",
+    title: "VP of Growth",
+    company: "PulseCommerce Analytics",
+    location: "Mumbai, India",
+    service: "Data Warehousing & BI",
+    rating: 5,
   },
 ];

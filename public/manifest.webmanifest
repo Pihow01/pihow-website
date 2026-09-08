@@ -1,0 +1,16 @@
+{
+  "name": "Pihow Services",
+  "short_name": "Pihow",
+  "description": "Premium full-stack web development and data engineering partnership.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#0e3b33",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

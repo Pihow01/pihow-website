@@ -3,15 +3,16 @@ export const siteConfig = {
   domain: "pihowservices.com",
   legacyDomain: "pihowservices.xyz",
   tagline:
-    "Empowering businesses with premium full-stack web development and ongoing digital partnership.",
+    "Empowering businesses with premium full-stack web development, data engineering, analytics, and ongoing technology partnership.",
   positioning:
-    "Pihow Services is the full-stack technology partner that growing businesses hire once and keep — combining the discipline of an in-house engineering team with the speed of a specialist studio.",
+    "Pihow Services is the full-stack technology partner that growing businesses hire once and keep — combining modern software engineering with enterprise data pipelines, warehousing, and analytics.",
   founder: {
     name: "Ashis Kumar Behura",
     role: "Founder & Tech Lead",
   },
   contact: {
-    email: "info@pihowservices.xyz",
+    email: "support@pihowservices.in",
+    secondaryEmail: "info@pihowservices.xyz",
     phone: "+91 81449 70408",
     phoneHref: "+918144970408",
     whatsappHref: "https://wa.me/918144970408",
@@ -23,9 +24,9 @@ export const siteConfig = {
     instagram: "https://instagram.com/pihowbyashis/",
   },
   booking: {
-    // Replace with the real Cal.com / Calendly scheduling link before launch.
-    href: "/contact",
+    href: "/contact#book-a-call",
     label: "Book a Free Consultation",
+    calLink: "https://cal.id/pihow",
   },
 } as const;
 
@@ -40,7 +41,7 @@ export const primaryNav: { label: string; href: string; children?: NavLink[] }[]
     label: "Services",
     href: "/services",
     children: [
-      { label: "Overview", href: "/services", description: "Both offers, side by side" },
+      { label: "Overview", href: "/services", description: "Full-stack & data engineering offers" },
       {
         label: "Premium Subscription",
         href: "/services/subscription",
@@ -50,6 +51,11 @@ export const primaryNav: { label: string; href: string; children?: NavLink[] }[]
         label: "One-Time Development",
         href: "/services/one-time-development",
         description: "A complete build you own — from ₹60,000",
+      },
+      {
+        label: "Data Engineering & Analytics",
+        href: "/services/data-engineering",
+        description: "ETL pipelines, Snowflake/BigQuery, BI & Analytics",
       },
     ],
   },
@@ -81,6 +87,7 @@ export const footerNav = {
     { label: "Services overview", href: "/services" },
     { label: "Premium Subscription", href: "/services/subscription" },
     { label: "One-Time Development", href: "/services/one-time-development" },
+    { label: "Data Engineering & Analytics", href: "/services/data-engineering" },
     { label: "Pricing & Comparison", href: "/pricing" },
   ],
   legal: [

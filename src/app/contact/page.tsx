@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, CalendarClock, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/Container";
-import { Eyebrow } from "@/components/SectionHeading";
+import { Eyebrow, SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site";
 
@@ -57,15 +57,42 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-xl border border-dashed border-hairline p-5 text-sm text-ink/60">
-            Prefer to pick a time directly? A Cal.com / Calendly scheduling link goes here once
-            connected — for now, the fastest paths are the form, email, or WhatsApp above.
-          </div>
         </div>
 
         <div className="rounded-2xl border border-hairline bg-surface p-8">
           <ContactForm />
         </div>
+      </Container>
+
+      <Container className="mt-20 scroll-mt-24" id="book-a-call">
+        <SectionHeading
+          eyebrow="Or skip the form"
+          title="Book a free consultation directly"
+          description="Pick a time that works for you — no email round-trip required."
+        />
+        <a
+          href={siteConfig.booking.calLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-8 flex flex-col items-start gap-4 rounded-2xl border border-hairline bg-surface p-8 transition-colors hover:border-teal sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-center gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal">
+              <CalendarClock size={22} />
+            </div>
+            <div>
+              <p className="font-display text-lg font-semibold text-ink">
+                Open the booking calendar
+              </p>
+              <p className="mt-1 text-sm text-ink/60">
+                Opens in a new tab — pick a free slot for a 15-minute call.
+              </p>
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-teal px-5 py-2.5 text-sm font-medium text-white transition-colors group-hover:bg-teal-dark">
+            Book a time <ArrowUpRight size={16} />
+          </span>
+        </a>
       </Container>
     </section>
   );

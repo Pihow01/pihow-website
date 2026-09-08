@@ -1,121 +1,206 @@
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Terminal, Code2, Database, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { Eyebrow } from "@/components/SectionHeading";
+import { Eyebrow, SectionHeading } from "@/components/SectionHeading";
+import { LinkedInIcon, XIcon, InstagramIcon } from "@/components/BrandIcons";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Pihow Services — Technical Leadership & Team",
   description:
-    "Pihow Services' mission, vision, and values — and the team behind the full-stack development and technical partnership work.",
+    "Learn about Pihow Services, founded by Ashis Kumar Behura. Full-stack software engineering, modern data architecture, and long-term technical partnerships.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
-    name: "Innovation",
-    description: "We constantly explore new technologies to deliver cutting-edge solutions.",
+    name: "Engineering Rigor",
+    description: "We write clean, typed, maintainable code designed to be read and maintained by teams for years, not rushed prototypes that collapse under scale.",
+    icon: Code2,
   },
   {
-    name: "Integrity",
-    description: "We believe in transparent, honest, and ethical business practices.",
+    name: "Data Integrity & Transparency",
+    description: "Whether modeling financial data in Snowflake or designing checkout workflows in Next.js, accuracy, zero-data-loss, and transparent metrics are non-negotiable.",
+    icon: Database,
   },
   {
-    name: "Collaboration",
-    description: "We work as an extension of your team to achieve shared goals.",
+    name: "Complete IP Handover",
+    description: "You own 100% of the code, data pipelines, infrastructure scripts, and documentation we write. We never lock clients into proprietary agency silos.",
+    icon: ShieldCheck,
   },
   {
-    name: "Excellence",
-    description: "We are committed to delivering the highest quality in everything we do.",
+    name: "Direct Developer Access",
+    description: "No junior intermediaries or account managers passing messages. You collaborate directly with senior technical leadership who understand your business model.",
+    icon: Terminal,
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-hairline py-20">
+      {/* Hero */}
+      <section className="border-b border-hairline py-20 bg-paper bg-tech-grid">
         <Container>
           <Eyebrow>About Pihow Services</Eyebrow>
-          <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold text-ink sm:text-5xl">
-            {siteConfig.positioning}
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold text-ink sm:text-5xl">
+            The technical partner growing businesses hire once and keep.
           </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
+            Pihow Services bridges the gap between high-performance full-stack web engineering and scalable enterprise data infrastructure. We combine the discipline of an in-house engineering team with the velocity and focus of a specialist studio.
+          </p>
         </Container>
       </section>
 
-      <section className="py-20">
-        <Container className="grid gap-10 sm:grid-cols-2">
-          <Card>
-            <h2 className="font-display text-xl font-semibold text-teal">Mission</h2>
-            <p className="mt-4 text-base leading-relaxed text-ink/70">
-              Empower businesses by providing accessible, high-quality, and premium custom web
-              application and full-stack development solutions.
-            </p>
-          </Card>
-          <Card>
-            <h2 className="font-display text-xl font-semibold text-teal">Vision</h2>
-            <p className="mt-4 text-base leading-relaxed text-ink/70">
-              To be a leading provider of digital transformation services, recognized for our
-              commitment to excellence, customer satisfaction, and technological innovation.
-            </p>
-          </Card>
-        </Container>
-      </section>
-
-      <section className="border-y border-hairline bg-surface py-20">
+      {/* Founder Spotlight */}
+      <section className="py-20 border-b border-hairline bg-surface">
         <Container>
-          <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
-            Core values
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value) => (
-              <div key={value.name}>
-                <h3 className="font-display text-lg font-semibold text-ink">{value.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">{value.description}</p>
+          <SectionHeading
+            eyebrow="Leadership"
+            title="Founder-Led Engineering Excellence"
+            description="Every engagement is architected and overseen directly by senior engineering leadership."
+          />
+
+          <div className="mt-12 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] items-center">
+            {/* Founder Photo */}
+            <div className="relative aspect-square max-w-md mx-auto w-full overflow-hidden rounded-2xl border border-hairline bg-slate-900 shadow-xl">
+              <Image
+                src="/images/ashis-behura.jpg"
+                alt="Ashis Kumar Behura — Founder & Tech Lead at Pihow Services"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 448px"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                <p className="font-display text-xl font-bold">{siteConfig.founder.name}</p>
+                <p className="font-mono text-xs text-amber-300">{siteConfig.founder.role}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Founder Bio & Philosophy */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-display text-2xl font-semibold text-ink">
+                  Engineering with Purpose & Accountability
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-ink/70">
+                  Ashis Kumar Behura founded Pihow Services to solve a persistent failure mode in software outsourcing: generic agencies that churn out fragile, unmaintainable code and disappear as soon as production issues arise.
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-ink/70">
+                  With deep hands-on expertise spanning modern web frameworks (Next.js, TypeScript, Node.js) and enterprise data platforms (Apache Kafka, Snowflake, dbt, BigQuery), Ashis leads technical discovery, system architecture, and quality assurance across every client engagement.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-hairline bg-paper p-5">
+                <p className="font-mono text-xs uppercase tracking-wider text-teal font-semibold mb-2">
+                  Specialist Network Model
+                </p>
+                <p className="text-xs leading-relaxed text-ink/70">
+                  Backing each project is a trusted network of senior UI/UX designers, cloud DevOps engineers, and QA specialists assembled specifically for the requirements of your build — ensuring you get domain experts without agency bloat.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-ink/70 hover:border-teal hover:text-teal transition-colors"
+                  aria-label="Ashis Kumar Behura on LinkedIn"
+                >
+                  <LinkedInIcon size={18} />
+                </a>
+                <a
+                  href={siteConfig.social.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-ink/70 hover:border-teal hover:text-teal transition-colors"
+                  aria-label="Ashis Kumar Behura on X"
+                >
+                  <XIcon size={18} />
+                </a>
+                <a
+                  href={siteConfig.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-ink/70 hover:border-teal hover:text-teal transition-colors"
+                  aria-label="Pihow on Instagram"
+                >
+                  <InstagramIcon size={18} />
+                </a>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-20">
+      {/* Mission & Vision */}
+      <section className="py-20 border-b border-hairline bg-paper">
+        <Container className="grid gap-8 sm:grid-cols-2">
+          <Card className="p-8">
+            <span className="font-mono text-xs uppercase text-gold font-semibold">Our Mission</span>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-teal">
+              Democratizing Production-Grade Engineering
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink/70">
+              Empower founders and growing companies by providing accessible, reliable, and premium custom web software and enterprise data solutions — delivering enterprise-grade discipline at startup velocity.
+            </p>
+          </Card>
+          <Card className="p-8">
+            <span className="font-mono text-xs uppercase text-gold font-semibold">Our Vision</span>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-teal">
+              The Long-Term Technology Standard
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink/70">
+              To be the most trusted international technology partner for businesses undergoing digital transformation — renowned for engineering excellence, customer alignment, and absolute transparency.
+            </p>
+          </Card>
+        </Container>
+      </section>
+
+      {/* Core Values */}
+      <section className="border-b border-hairline bg-surface py-20">
         <Container>
-          <Eyebrow>Team</Eyebrow>
-          <h2 className="mt-3 font-display text-2xl font-semibold text-ink sm:text-3xl">
-            Founder-led, network-supported
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <Card>
-              <div className="h-16 w-16 rounded-full bg-teal/10" aria-hidden="true" />
-              <h3 className="mt-4 font-display text-lg font-semibold text-ink">
-                {siteConfig.founder.name}
-              </h3>
-              <p className="text-sm text-gold">{siteConfig.founder.role}</p>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                Leads every engagement end to end — from discovery and architecture through
-                delivery and ongoing support.
-              </p>
-            </Card>
-            <Card className="flex flex-col justify-center">
-              <p className="text-sm leading-relaxed text-ink/70">
-                Every project is backed by a vetted network of design, QA, and DevOps specialists
-                engaged as needed — so a monthly partnership gets the right skills for the work in
-                front of it, not just one person&apos;s available hours.
-              </p>
-            </Card>
+          <SectionHeading
+            eyebrow="Guiding Principles"
+            title="How we think and build"
+            description="The four foundational commitments that govern every line of code and customer interaction."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div key={value.name} className="rounded-xl border border-hairline bg-paper p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal/10 text-teal mb-4">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-ink">{value.name}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-ink/70">{value.description}</p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-hairline bg-surface py-20">
-        <Container className="text-center">
-          <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
-            Let&apos;s talk about your project
+      {/* Contact CTA */}
+      <section className="py-20 bg-paper text-center">
+        <Container className="max-w-xl">
+          <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+            Let&apos;s build together
           </h2>
-          <div className="mt-6">
+          <p className="mt-4 text-base text-ink/70">
+            Tell us about your web application or enterprise data challenge. We would love to evaluate your roadmap.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Button href="/contact" variant="primary">
-              Book a Free Consultation <ArrowRight size={16} />
+              Get in Touch <ArrowRight size={16} />
+            </Button>
+            <Button href="/contact#book-a-call" variant="secondary">
+              Book a Free Consultation
             </Button>
           </div>
         </Container>

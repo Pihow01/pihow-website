@@ -121,32 +121,39 @@ export const oneTimePricingFactors = [
 export const comparisonRows = [
   {
     label: "Best for",
-    subscription: "A product that needs to keep evolving",
-    oneTime: "A clearly scoped project with a fixed budget",
+    subscription: "A web product that needs continuous feature shipping",
+    oneTime: "A clearly scoped website or web app with fixed budget",
+    dataEngineering: "Companies needing scalable data pipelines, warehouses & BI",
   },
   {
     label: "Engagement",
-    subscription: "Ongoing monthly partnership",
+    subscription: "Ongoing monthly sprint partnership",
     oneTime: "One project, start to finish",
+    dataEngineering: "Custom architectural build or ongoing data retainers",
   },
   {
     label: "Pricing",
     subscription: "₹45,000 / month",
     oneTime: "From ₹60,000",
+    dataEngineering: "Custom quote based on pipelines & data volume",
   },
   {
     label: "Support",
     subscription: "Priority support, replanned monthly",
     oneTime: "30 days of post-launch bug-fix support",
+    dataEngineering: "SLA-backed uptime & pipeline monitoring support",
   },
   {
     label: "Ownership",
-    subscription: "You own everything built, month to month",
-    oneTime: "Full source-code handover on completion",
+    subscription: "You own all code & assets month to month",
+    oneTime: "Full source-code & repository handover on completion",
+    dataEngineering: "100% ownership of pipelines, dbt models & schemas",
   },
   {
-    label: "Ideal for",
-    subscription: "Startups & growing businesses whose product keeps changing",
-    oneTime: "Businesses that need one thing built well, once",
+    label: "Typical Timeline",
+    subscription: "Immediate sprint kickoff, weekly deploys",
+    oneTime: "4–10 weeks based on milestone scope",
+    dataEngineering: "3–8 weeks for initial lakehouse / pipelines",
   },
 ] as const;
+

@@ -1,20 +1,78 @@
 export type BlogPost = {
   slug: string;
   title: string;
+  category: string;
   description: string;
   date: string;
   readingTime: string;
+  author: {
+    name: string;
+    role: string;
+  };
   body: { heading?: string; paragraphs: string[]; list?: string[] }[];
 };
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "modern-data-stack-guide-for-startups-in-2026",
+    title: "The Modern Data Stack for Startups in 2026: When to Move Beyond Spreadsheets",
+    category: "Data Engineering",
+    description:
+      "How to know when your business has outgrown manual exports and basic SQL, and what an actual modern data architecture looks like on a reasonable budget.",
+    date: "2026-08-28",
+    readingTime: "7 min read",
+    author: {
+      name: "Ashis Kumar Behura",
+      role: "Founder & Tech Lead",
+    },
+    body: [
+      {
+        paragraphs: [
+          "Most growing companies follow a predictable path: they start with everything inside PostgreSQL or Stripe, then add Google Sheets for ad-hoc analysis, and before they know it, three different team members are arguing in Monday meetings because their spreadsheets show contradictory revenue numbers.",
+          "Building a modern data stack does not require hiring a five-person data team or burning tens of thousands of dollars on enterprise software licenses. Here is how growing teams build a resilient, real-time analytics layer in 2026.",
+        ],
+      },
+      {
+        heading: "The Three Telltale Signs You Have Outgrown Spreadsheets",
+        paragraphs: [
+          "If any of these sound familiar, your current reporting is creating operational drag rather than strategic clarity:",
+        ],
+        list: [
+          "Financial closing or monthly reporting takes more than 48 hours of manual copy-pasting between platforms.",
+          "Different departments report conflicting numbers for basic metrics like customer acquisition cost (CAC) or active customer count.",
+          "Your operational database slows down or locks users out whenever business analysts run heavy analytical SQL queries during business hours.",
+        ],
+      },
+      {
+        heading: "The 2026 Reference Architecture",
+        paragraphs: [
+          "A modern, cost-effective data architecture consists of four distinct, decoupled layers:",
+          "1. Ingestion: Automated connectors (Airbyte, Fivetran, or custom Kafka streaming for real-time events) that extract data from SaaS tools and databases into raw cloud storage without impacting production systems.",
+          "2. Central Lakehouse/Warehouse: A cloud analytical warehouse like Snowflake or Google BigQuery that separates compute costs from storage, ensuring you only pay for compute when running queries.",
+          "3. Transformation (dbt): Modular SQL models that clean, test, and document your data before anyone builds a dashboard on it. If a formula changes, you update it once in code rather than in 20 different spreadsheets.",
+          "4. Consumption & BI: Tools like Power BI, Tableau, or custom customer-facing embedded dashboards that query clean, validated marts in sub-seconds.",
+        ],
+      },
+      {
+        heading: "How to Scope Your Migration",
+        paragraphs: [
+          "Do not try to ingest all 20 of your company tools on day one. Start with the single metric that impacts revenue or operations most (e.g. order fulfillment latency or customer cohort retention), build the pipeline end-to-end, and expand outward once trust in the numbers is established.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "how-much-does-custom-web-app-development-cost-in-2026",
     title: "How Much Does Custom Web App Development Cost in 2026?",
+    category: "Pricing & Scoping",
     description:
       "A straightforward breakdown of what drives the cost of a custom web application, and how to scope a project before you ask for quotes.",
     date: "2026-08-10",
     readingTime: "6 min read",
+    author: {
+      name: "Ashis Kumar Behura",
+      role: "Founder & Tech Lead",
+    },
     body: [
       {
         paragraphs: [
@@ -51,10 +109,15 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-choose-an-outsourced-development-partner",
     title: "How to Choose a Development Partner Without Getting Burned",
+    category: "Vendor Selection",
     description:
       "Five questions to ask before signing with any outsourced development vendor — freelancer, agency, or studio.",
     date: "2026-08-17",
     readingTime: "5 min read",
+    author: {
+      name: "Ashis Kumar Behura",
+      role: "Founder & Tech Lead",
+    },
     body: [
       {
         paragraphs: [
