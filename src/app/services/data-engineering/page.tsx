@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import dataPipelineImg from "../../../../public/images/data-pipeline.jpg";
 import { 
   ArrowRight, 
   Database, 
@@ -142,7 +143,7 @@ export default function DataEngineeringPage() {
 
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline bg-slate-950 shadow-xl">
             <Image
-              src="/images/data-pipeline.jpg"
+              src={dataPipelineImg}
               alt="Data Pipeline and Analytics Architecture Preview"
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"

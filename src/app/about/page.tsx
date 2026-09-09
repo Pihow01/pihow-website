@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import ashisBehuraImg from "../../../public/images/ashis-behura.jpg";
 import { ArrowRight, Terminal, Code2, Database, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
@@ -67,7 +68,7 @@ export default function AboutPage() {
             {/* Founder Photo */}
             <div className="relative aspect-square max-w-md mx-auto w-full overflow-hidden rounded-2xl border border-hairline bg-slate-900 shadow-xl">
               <Image
-                src="/images/ashis-behura.jpg"
+                src={ashisBehuraImg}
                 alt="Ashis Kumar Behura — Founder & Tech Lead at Pihow Services"
                 fill
                 priority

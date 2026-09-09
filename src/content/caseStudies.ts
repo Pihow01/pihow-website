@@ -1,3 +1,8 @@
+import type { StaticImageData } from "next/image";
+import ecommerceSubscriptionImg from "../../public/images/ecommerce-subscription.jpg";
+import dataPipelineImg from "../../public/images/data-pipeline.jpg";
+import logisticsDispatchImg from "../../public/images/logistics-dispatch.jpg";
+
 export type CaseStudy = {
   slug: string;
   client: string;
@@ -11,7 +16,7 @@ export type CaseStudy = {
   techStack: string[];
   result: string;
   metrics: { label: string; value: string }[];
-  image?: string;
+  image?: StaticImageData | string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -42,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Weekly Retention", value: "81%" },
       { label: "Time to First Order", value: "2.1 min" },
     ],
-    image: "/images/ecommerce-subscription.jpg",
+    image: ecommerceSubscriptionImg,
   },
   {
     slug: "apexmetrics-financial",
@@ -71,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Infra Cost Savings", value: "38%" },
       { label: "Pipeline Uptime", value: "99.99%" },
     ],
-    image: "/images/data-pipeline.jpg",
+    image: dataPipelineImg,
   },
   {
     slug: "northbridge-logistics",
@@ -99,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Active Fleet Monitored", value: "450+ Units" },
       { label: "Shipper Inquiries", value: "-78%" },
     ],
-    image: "/images/logistics-dispatch.jpg",
+    image: logisticsDispatchImg,
   },
   {
     slug: "pulsecommerce-analytics",
@@ -128,7 +133,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Ad Spend Efficiency", value: "+26%" },
       { label: "Data Freshness", value: "<15 min" },
     ],
-    image: "/images/data-pipeline.jpg",
+    image: dataPipelineImg,
   },
   {
     slug: "al-waha-clinics",
@@ -156,6 +161,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "WhatsApp Confirmations", value: "92% rate" },
       { label: "Clinics Connected", value: "5 Centers" },
     ],
-    image: "/images/ecommerce-subscription.jpg",
+    image: ecommerceSubscriptionImg,
   },
 ];

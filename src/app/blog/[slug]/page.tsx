@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import ashisBehuraImg from "../../../../public/images/ashis-behura.jpg";
 import { ArrowRight, ChevronLeft, Clock, Calendar } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
@@ -96,7 +97,7 @@ export default async function BlogPostPage({
           <div className="mt-6 flex items-center gap-3 pt-6 border-t border-hairline">
             <div className="relative h-10 w-10 overflow-hidden rounded-full border border-hairline bg-slate-800">
               <Image
-                src="/images/ashis-behura.jpg"
+                src={ashisBehuraImg}
                 alt={post.author.name}
                 fill
                 sizes="40px"
@@ -146,7 +147,7 @@ export default async function BlogPostPage({
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-hairline bg-slate-800">
                 <Image
-                  src="/images/ashis-behura.jpg"
+                  src={ashisBehuraImg}
                   alt={post.author.name}
                   fill
                   sizes="64px"
