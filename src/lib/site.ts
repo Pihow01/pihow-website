@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Pihow Services",
-  domain: "pihowservices.com",
+  domain: "pihowservices.in",
   legacyDomain: "pihowservices.xyz",
   tagline:
     "Empowering businesses with premium full-stack web development, data engineering, analytics, and ongoing technology partnership.",

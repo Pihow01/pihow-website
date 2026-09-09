@@ -82,8 +82,8 @@ export async function POST(request: Request) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Referer: "https://pihowservices.com/contact",
-        Origin: "https://pihowservices.com",
+        Referer: "https://pihowservices.in/contact",
+        Origin: "https://pihowservices.in",
       },
       body: JSON.stringify({
         "Client Name": sanitized.name,

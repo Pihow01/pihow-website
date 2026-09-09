@@ -27,23 +27,60 @@ function ContactFormInner() {
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+    const name = String(data.name || "").trim();
+    const email = String(data.email || "").trim();
+    const message = String(data.message || "").trim();
+
+    if (!name || !email || !message) {
+      setErrorMessage("Please fill in your name, email, and project message.");
+      setStatus("error");
+      return;
+    }
+
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const formPayload = {
+        "Client Name": name,
+        "Email Address": email,
+        "Phone / WhatsApp": String(data.phone || "Not provided").trim(),
+        "Company": String(data.company || "Not provided").trim(),
+        "Service Required": String(data.projectType || projectType),
+        "Anticipated Budget": String(data.budget || "Flexible"),
+        "Project Message": message,
+        _subject: `New Lead [${data.projectType || projectType}]: ${name}`,
+        _replyto: email,
+        _template: "table",
+        _captcha: "false",
+      };
 
-      const json = await res.json().catch(() => null);
+      // 1. Primary: Direct browser dispatch to FormSubmit (zero .env, works on GitHub Pages & Vercel)
+      try {
+        await fetch("https://formsubmit.co/ajax/support@pihowservices.in", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formPayload),
+        });
+      } catch (fsErr) {
+        console.warn("Direct FormSubmit notice:", fsErr);
+      }
 
-      if (!res.ok) {
-        throw new Error(json?.error || "Submission failed. Please try again.");
+      // 2. Secondary: Internal Next.js API route as backup
+      try {
+        await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+      } catch (apiErr) {
+        console.warn("Internal API route notice:", apiErr);
       }
 
       setStatus("success");
       form.reset();
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Something went wrong.";
+      const msg = err instanceof Error ? err.message : "Something went wrong. Please email us directly at support@pihowservices.in.";
       setErrorMessage(msg);
       setStatus("error");
     }
