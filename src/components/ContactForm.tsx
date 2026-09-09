@@ -54,7 +54,7 @@ function ContactFormInner() {
 
       // 1. Primary: Direct browser dispatch to FormSubmit (zero .env, works on GitHub Pages & Vercel)
       try {
-        await fetch("https://formsubmit.co/ajax/support@pihowservices.in", {
+        await fetch("https://formsubmit.co/ajax/92f744264d10f70e032a1c4205e29bfd", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

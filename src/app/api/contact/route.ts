@@ -15,6 +15,7 @@ type ContactPayload = {
 };
 
 const DESTINATION_EMAIL = "support@pihowservices.in";
+const FORMSUBMIT_TOKEN = "92f744264d10f70e032a1c4205e29bfd";
 
 // In-memory rate limiting (5 submissions per 10 mins per IP)
 const submissionsByIp = new Map<string, number[]>();
@@ -77,7 +78,7 @@ export async function POST(request: Request) {
 
   try {
     // Zero-config email dispatch via FormSubmit (No .env or API keys required)
-    const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${DESTINATION_EMAIL}`, {
+    const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_TOKEN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
